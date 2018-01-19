@@ -68,4 +68,5 @@ Install it via terminal:
 
 ## Thanks
 To [@cesarferreira](https://github.com/cesarferreira) for creating this project
+
 To [@joaquimadraz](https://github.com/joaquimadraz) for the ruby pro-tips
