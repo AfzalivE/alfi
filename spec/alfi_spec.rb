@@ -26,9 +26,24 @@ describe Alfi do
       VCR.use_cassette('search_picassoa_with_suggestions') do
         maven_provider = Alfi::Providers::Maven.new('picassoa', [])
 
-        expect(maven_provider).to receive(:add_suggestions).with(array_including('picasso', 'piccolo'))
+        expect(maven_provider).to receive(:add_suggestions).with(array_including('picasso', 'picasa', 'picosa', 'picadoh', 'cycladessoa'))
         maven_provider.call
       end
     end
+  end
+
+  it 'Test with custom prefix' do
+    $prefix = 'compile'
+    maven = Alfi::Search.new
+    maven.call('sPref', ["maven"])
+    expect($result_list[2]).to include("compile")
+  end
+
+  it 'Test with single quotes' do
+    $single_quotes = true
+    maven = Alfi::Search.new
+    maven.call('sPref', ["maven"])
+    expect($result_list[2]).to include("'")
+    $single_quotes = false
   end
 end

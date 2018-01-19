@@ -1,5 +1,8 @@
 require 'optparse'
 include OptionParser::Arguable
+      
+$prefix = "implementation"
+$single_quotes = false
 
 class Alfi::Cli
   BINTRAY_OPTIONS_FILE_NAME = File.expand_path('~/.alfi_bintray.json')
@@ -15,15 +18,13 @@ class Alfi::Cli
     search_param = @all_defined_arguments.include?(arguments.first) ? nil : arguments.shift
     @bintray_username = nil
     @bintray_key = nil
-    @prefix = "implementation"
-    @single_quotes = false
     @opt_parser.parse!(arguments)
 
     parse_bintray_auth
 
     exit_with("Missing query parameter\n".red + @opt_parser.help) unless search_param
 
-    Alfi::Search.new.call(search_param, @search_type, @prefix, @single_quotes)
+    Alfi::Search.new.call(search_param, @search_type)
   end
 
   def create_options_parser
@@ -63,10 +64,10 @@ class Alfi::Cli
         exit
       end
       opts.on('-p PREFIX', '--prefix PREFIX', 'Use custom prefix instead of "implementation"') do |prefix|
-        @prefix = prefix
+        $prefix = prefix
       end
       opts.on('-s', '--single-quotes', 'Use single quotes instead of double quotes') do
-        @single_quotes = true
+        $single_quotes = true
       end
       opts.on('-r REPOSITORY_NAME', '--repository REPOSITORY_NAME', 'If should search on maven, jCenter or mavenCentral ') do |repository_name|
         if repository_name != "maven" && repository_name != "jcenter" && repository_name != "mavencentral"
