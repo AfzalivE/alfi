@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'alfi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'alfi'
+  spec.name          = 'alfi2'
   spec.version       = Alfi::VERSION
-  spec.authors       = ['cesar ferreira']
-  spec.email         = ['cesar.manuel.ferreira@gmail.com']
+  spec.authors       = ['cesar ferreira', 'Afzal Najam']
+  spec.email         = ['afzalnaj+dev@gmail.com']
 
   if spec.respond_to?(:metadata)
     #spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Android Library Finder'
   spec.description   = 'Android Library Finder'
-  spec.homepage      = "https://github.com/cesarferreira/alfi"
+  spec.homepage      = "https://github.com/afzalive/alfi"
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
