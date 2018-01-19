@@ -1,7 +1,7 @@
 # alfi 2
 
 ![](http://ruby-gem-downloads-badge.herokuapp.com/alfi2?type=total)
-[![Build Status](https://travis-ci.org/afzalive/alfi.svg?branch=master)](https://travis-ci.org/afzalive/alfi) 
+[![Build Status](https://travis-ci.org/AfzalivE/alfi.svg?branch=master)](https://travis-ci.org/AfzalivE/alfi) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/52ccd1e232684026b943c2be7059afcd)](https://www.codacy.com/app/AfzalivE/alfi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AfzalivE/alfi&amp;utm_campaign=Badge_Grade)
 [![Gem Version](http://img.shields.io/gem/v/alfi2.svg?style=flat)](http://badge.fury.io/rb/alfi2) 
 
